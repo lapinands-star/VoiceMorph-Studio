@@ -1,0 +1,1 @@
+developer_instructions = "Independently review full scanner report and targeted unsafe/exec/network/PTH/ZIP/DLL/PowerShell paths. Require release hashes/AV/runtime egress for final clearance. Update SecurityReview.md with severity and evidence; no malware-free claims without testing."

@@ -1,0 +1,20 @@
+name: PTH fixture static inspection
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect ZIP, CRC, hashes and pickle opcodes without executing models
+        run: python3 scripts/security_fixture_audit.py
+      - name: Retain JSON artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pth-fixture-audit
+          path: pth-fixture-audit.json
+          if-no-files-found: warn

@@ -1,0 +1,1 @@
+developer_instructions = "Check vc-rs v0.5.5, Windows 11 RTX4080 TensorRT, dependency/voice model and virtual-cable feasibility. Return GO/GO_WITH_SPIKE/NO_GO with one decisive diagnostic. Do not invent hardware evidence."

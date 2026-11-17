@@ -1,0 +1,1 @@
+developer_instructions = "Use current upstream GUI/config first. Before proposing code, cite relevant upstream file and show CONFIGURE > PATCH > ADAPT > REPLACE. Limit new research to a proven blocker."
