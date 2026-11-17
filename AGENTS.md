@@ -102,3 +102,14 @@ add redundant comments or restate obvious code behavior.
 - Inspect the current branch and working tree; preserve unrelated changes.
 - Create a working branch before editing on `main`.
 - Commit or push only when requested.
+
+---
+## VoiceMorph Studio fork-specific instructions (2026-11-17)
+These instructions extend, not replace, upstream engineering rules.
+**Only modify this fork.** User goal: existing `vc-rs` RVC voice changer on Windows 11 RTX 4080, male -> female / anime female / deep male, local GPU/OBS. Prefer existing configuration and portable release. No new inference engine, virtual driver, or GUI rewrite without a reproducible blocker.
+
+Read `Request.md`, `requirements.md`, `Plan.md`, `Goals.md`, `ProjectFinishCriteria.md`, `Security.md`, `SecurityReview.md`, `audit.md` and `result.md` before each phase. Follow CP gates and work on one G-ID at a time.
+
+Fork policy: `main` remains unmodified unless reviewed and explicitly merged; no force-push, deletion, release or running unverified binaries. Always record exact commit and test results. Runtime intended offline; treat third-party ONNX/PTH, DLLs, TensorRT builder and PowerShell as untrusted until checked. Do not silently install drivers or fetch voice models.
+
+Seven `.codex/agents/*.toml` roles are available as configuration only. Agents must be actually invoked to count as reviewers. If a test could not run, use `NOT_TESTED` / `HARDWARE_REQUIRED`, never PASS. Update `SecurityReview.md` with findings and `audit.md` with evidence. Each response must give changes, source commit, checks performed, missing checks and exactly one next action.

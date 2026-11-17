@@ -1,0 +1,26 @@
+# Project-local Codex agent registrations (not automatically invoked)
+[features]
+multi_agent = true
+[agents]
+max_threads = 3
+[agents.AstraPreflight]
+description = "Feasibility preflight, bounded GO/NO_GO"
+config_file = "agents/AstraPreflight.toml"
+[agents.ReuseScout]
+description = "Reuse upstream first, minimal changes"
+config_file = "agents/ReuseScout.toml"
+[agents.PlanReviewer]
+description = "Plan gate and scope limiter"
+config_file = "agents/PlanReviewer.toml"
+[agents.GoalsReviewer]
+description = "Requirement to acceptance evidence"
+config_file = "agents/GoalsReviewer.toml"
+[agents.SecurityReviewer]
+description = "Independent security source/runtime review"
+config_file = "agents/SecurityReviewer.toml"
+[agents.QAReviewer]
+description = "Independent Windows audio/GPU tests"
+config_file = "agents/QAReviewer.toml"
+[agents.ReviewMaster]
+description = "Evidence-based final gate"
+config_file = "agents/ReviewMaster.toml"
